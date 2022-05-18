@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>CheFlix</title>
+</head>
+<body>
+    <header>
+        <h1>Registrarse</h1>
+    </header>
+    <main>
+        <section>
+            <form action="/index.html" method="post" class="contenedor">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <br>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido">
+                    <br>
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email">
+                    <br>
+                    <label for="usrname">Nombre de Usuario:</label>
+                    <input type="text" name="usrname" id="usrname">
+                    <br>
+                    <label for="pass">Contraseña:</label>
+                    <input type="password" name="pass" id="pass">
+                    <br>
+                    <label for="rpass">Repetir Contraseña:</label>
+                    <input type="password" name="rpass" id="rpass">
+                </div>
+                <div>
+                    <h3>Método de Pago</h3>
+                    <input type="radio" name="credito" id="credito">
+                    <label for="credito">Tarjeta de Crédito</label>
+                    <br>
+                    <input type="text" name="nrotarjeta" id="nrotarjeta" placeholder="Numero de Tarjeta" maxlength="16" minlength="16">
+                    <input type="text" name="nrocvv" id="nrocvv" placeholder="XXX" maxlength="3" minlength="3">
+                    <br>
+                    <input type="radio" name="cupon" id="cupon">
+                    <label for="cupon">Cupón de Pago</label>
+                    <br>
+                    <input type="checkbox" name="pagof" id="pagof">
+                    <label for="pagof">Pago Facil</label>
+                    <input type="checkbox" name="rapip" id="rapip">
+                    <label for="rapip">RapiPago</label>
+                    <br>
+                    <input type="radio" name="transfer" id="transfer">
+                    <label for="transfer">Transferencia Bancaria</label>
+                    <br>
+                    <p>CBU: 362514444595959337723</p>
+                </div>
+                <div>
+                    <!-- ARREGLAR HACIA ADONDE LLEVA EL SUBMIT -->
+                    <input type="submit" value="Confirmar">
+                    <a href="index.html"><input type="button" value="Cancelar"></a>
+                </div>
+            </form>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.filtros{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    height: 4em;
+}
+.busqueda {
+    width: 50%;
+    height: 85%;
+}
+.categoria{
+    width: 50%;
+    height: 85%;
+}
+#busqueda-text {
+    display: block;
+    float: right;
+    margin: auto;
+    height: 100%;
+    background: #f5f5f5;
+    outline: none;
+    border: none;
+    border-radius: 1.625em;
+    padding: 0 2em 0 1.5em;
+}
+#lupa {
+    width: 3.5em;
+    float: right;
+    height: 100%;
+    margin-left: 2.5rem;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+#lupa:hover{
+    cursor: pointer;
+}
+
+
+

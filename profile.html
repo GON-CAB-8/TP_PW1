@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>CheFlix</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section>
+            <article class="imagen-perfil">
+                <img src="./img/avatar.png" alt="avatar">
+                <p>User: UNLaM</p>
+            </article>
+            <article>
+                <form action="" class="contenedor">
+                    <div>
+                        <label for="email">E-mail:</label>
+                        <input type="text" name="email" id="email" value="unlam@gmail.com" disabled>
+                        <br>
+                        <label for="pass">Contraseña:</label>
+                        <input type="text" name="pass" id="pass" value="***********" disabled>
+                        <br>
+                        <label for="newpass">Nueva Contraseña:</label>
+                        <input type="password" name="newpass" id="newpass">
+                        <br>
+                        <label for="newpassrepeat">Repetir Contraseña</label>
+                        <input type="password" name="newpassrepeat" id="newpassrepeat">
+                    </div>
+                    <div>
+                        <h3>Método de Pago</h3>
+                        <input type="radio" name="metodo" id="credito">
+                        <label for="credito">Tarjeta de Crédito</label>
+                        <br>
+                        <input type="text" name="nrotarjeta" id="nrotarjeta" placeholder="Numero de Tarjeta" maxlength="16" minlength="16">
+                        <input type="text" name="nrocvv" id="nrocvv" placeholder="XXX" maxlength="3" minlength="3">
+                        <br>
+                        <input type="radio" name="metodo" id="cupon">
+                        <label for="cupon">Cupón de Pago</label>
+                        <br>
+                        <input type="checkbox" name="pagof" id="pagof">
+                        <label for="pagof">Pago Facil</label>
+                        <input type="checkbox" name="rapip" id="rapip">
+                        <label for="rapip">RapiPago</label>
+                        <br>
+                        <input type="radio" name="metodo" id="transfer">
+                        <label for="transfer">Transferencia Bancaria</label>
+                        <br>
+                        <p>CBU: 362514444595959337723</p>
+                    </div>
+                </form>
+                <div>
+                    <!-- ARREGLAR HACIA ADONDE LLEVA EL SUBMIT -->
+                    <input type="submit" value="Guardar Cambios">
+                    <a href="index.html"><input type="button" value="Cancelar Suscripción"></a>
+                </div>
+            </article>
+
+        </section>
+        
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

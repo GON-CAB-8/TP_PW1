@@ -1,13 +1,24 @@
-.contenedor{
+.contenedor-perfil{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15em;
+    flex-wrap: wrap;
 }
 
-.contenedor div{
+.imagen-perfil{
+    width: 20%;
+    margin-left: 40px;
+}
+
+.datos{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    gap: 10em;
     width: auto;
-    height: auto;
+    margin-left: 50px;
+}
+
+.datos div{
+    width: calc(40% -10px);
 }
 
 label{
@@ -16,11 +27,12 @@ label{
     margin: 7px;
 }
 
-.cont-atributos label{
+.datos label{
     margin: 12px 0px;
+    width: 200px;
 }
 
-.cont-metodos div{
+.metodos div{
     margin-left: 60px;
 }
 
@@ -29,9 +41,8 @@ label{
 }
 
 .botones{
-    margin-top: 20px;
+    margin: 30px auto;
     display: flex;
-    justify-content: center;
     gap: 40px;
 }
 
@@ -41,7 +52,7 @@ label{
     border-radius: 5px;
 }
 
-.confirmar{
+.guardar{
     background-color: #a1ffa1;
 }
 

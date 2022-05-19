@@ -5,21 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/profile.css">
     <title>CheFlix</title>
 </head>
 <body>
     <header>
-
+        <nav class="menu-navegacion">
+            <a href="main-page.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="detail-serie.html"><i class="fa-solid fa-film"></i>Series</a>
+            <a href="detail-movie.html"><i class="fa-solid fa-film"></i>Peliculas</a>
+            <a href="profile.html"><i class="fa-solid fa-address-card"></i>Perfil</a>
+        </nav>
     </header>
     <main>
-        <section>
+        <section class="contenedor-perfil">
             <article class="imagen-perfil">
-                <img src="./img/avatar.png" alt="avatar">
+                <img src="./img/avatarchico.png" alt="avatar">
                 <p>User: UNLaM</p>
             </article>
             <article>
-                <form action="" class="contenedor">
-                    <div>
+                <form action="" class="datos">
+                    <div class="atrib">
                         <label for="email">E-mail:</label>
                         <input type="text" name="email" id="email" value="unlam@gmail.com" disabled>
                         <br>
@@ -32,37 +39,40 @@
                         <label for="newpassrepeat">Repetir Contraseña</label>
                         <input type="password" name="newpassrepeat" id="newpassrepeat">
                     </div>
-                    <div>
+                    <div class="metodos">
                         <h3>Método de Pago</h3>
                         <input type="radio" name="metodo" id="credito">
                         <label for="credito">Tarjeta de Crédito</label>
                         <br>
-                        <input type="text" name="nrotarjeta" id="nrotarjeta" placeholder="Numero de Tarjeta" maxlength="16" minlength="16">
-                        <input type="text" name="nrocvv" id="nrocvv" placeholder="XXX" maxlength="3" minlength="3">
+                        <div>
+                            <input type="text" name="nrotarjeta" id="nrotarjeta" placeholder="Numero de Tarjeta" maxlength="16" minlength="16">
+                            <input type="text" name="nrocvv" id="nrocvv" placeholder="XXX" maxlength="3" minlength="3">
+                        </div>
                         <br>
                         <input type="radio" name="metodo" id="cupon">
                         <label for="cupon">Cupón de Pago</label>
                         <br>
-                        <input type="checkbox" name="pagof" id="pagof">
+                        <div>
+                            <input type="checkbox" name="pagof" id="pagof">
                         <label for="pagof">Pago Facil</label>
                         <input type="checkbox" name="rapip" id="rapip">
                         <label for="rapip">RapiPago</label>
+                        </div>
                         <br>
                         <input type="radio" name="metodo" id="transfer">
                         <label for="transfer">Transferencia Bancaria</label>
                         <br>
-                        <p>CBU: 362514444595959337723</p>
+                        <div>
+                            <p>CBU: 362514444595959337723</p>
+                        </div>
                     </div>
                 </form>
-                <div>
-                    <!-- ARREGLAR HACIA ADONDE LLEVA EL SUBMIT -->
-                    <input type="submit" value="Guardar Cambios">
-                    <a href="index.html"><input type="button" value="Cancelar Suscripción"></a>
-                </div>
             </article>
-
-        </section>
-        
+            <div class="botones">
+                <a href="index.html"><input type="submit" value="Guardar Cambios" class="guardar"></a>
+                <a href="index.html"><input type="button" value="Cancelar Suscripción" class="cancelar"></a>
+            </div>
+        </section>        
     </main>
     <footer>
 

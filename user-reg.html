@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/usr-reg.css">
     <title>CheFlix</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
     <main>
         <section>
             <form action="/index.html" method="post" class="contenedor">
-                <div>
+                <div class="cont-atributos">
                     <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" id="nombre">
                     <br>
@@ -24,7 +25,7 @@
                     <label for="email">E-mail:</label>
                     <input type="email" name="email" id="email">
                     <br>
-                    <label for="usrname">Nombre de Usuario:</label>
+                    <label for="usrname">Usuario:</label>
                     <input type="text" name="usrname" id="usrname">
                     <br>
                     <label for="pass">Contraseña:</label>
@@ -33,32 +34,37 @@
                     <label for="rpass">Repetir Contraseña:</label>
                     <input type="password" name="rpass" id="rpass">
                 </div>
-                <div>
+                <div class="cont-metodos">
                     <h3>Método de Pago</h3>
                     <input type="radio" name="metodo" id="credito">
                     <label for="credito">Tarjeta de Crédito</label>
                     <br>
-                    <input type="text" name="nrotarjeta" id="nrotarjeta" placeholder="Numero de Tarjeta" maxlength="16" minlength="16">
-                    <input type="text" name="nrocvv" id="nrocvv" placeholder="XXX" maxlength="3" minlength="3">
+                    <div>
+                        <input type="text" name="nrotarjeta" id="nrotarjeta" placeholder="Numero de Tarjeta" maxlength="16" minlength="16">
+                        <input type="text" name="nrocvv" id="nrocvv" placeholder="XXX" maxlength="3" minlength="3">
+                    </div>
                     <br>
                     <input type="radio" name="metodo" id="cupon">
                     <label for="cupon">Cupón de Pago</label>
                     <br>
-                    <input type="checkbox" name="pagof" id="pagof">
-                    <label for="pagof">Pago Facil</label>
-                    <input type="checkbox" name="rapip" id="rapip">
-                    <label for="rapip">RapiPago</label>
+                    <div>
+                        <input type="checkbox" name="pagof" id="pagof">
+                        <label for="pagof">Pago Facil</label>
+                        <input type="checkbox" name="rapip" id="rapip">
+                        <label for="rapip">RapiPago</label>
+                    </div>                    
                     <br>
                     <input type="radio" name="metodo" id="transfer">
                     <label for="transfer">Transferencia Bancaria</label>
                     <br>
-                    <p>CBU: 362514444595959337723</p>
+                    <div>
+                        <p>CBU: 362514444595959337723</p>
+                    </div>
                 </div>
             </form>
-            <div>
-                <!-- ARREGLAR HACIA ADONDE LLEVA EL SUBMIT -->
-                <input type="submit" value="Confirmar">
-                <a href="index.html"><input type="button" value="Cancelar"></a>
+            <div class="botones">
+                <a href="index.html"><input type="submit" value="Confirmar" class="confirmar"></a>
+                <a href="index.html"><input type="button" value="Cancelar" class="cancelar"></a>
             </div>
         </section>
 

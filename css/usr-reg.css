@@ -1,0 +1,51 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15em;
+}
+
+.contenedor div{
+
+    width: auto;
+    height: auto;
+}
+
+label{
+    display: inline-block;
+    width: 100px;
+    margin: 7px;
+}
+
+.cont-atributos label{
+    margin: 12px 0px;
+}
+
+.cont-metodos div{
+    margin-left: 60px;
+}
+
+#nrocvv{
+    width: 30px;
+}
+
+.botones{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.botones input{
+    width: 160px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.confirmar{
+    background-color: #a1ffa1;
+}
+
+.cancelar{
+    background-color: #cc5c3f;    
+}

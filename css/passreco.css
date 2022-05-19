@@ -1,3 +1,7 @@
+body{
+    background-image: url(../img/img02.jpg) ;
+    background-size: cover;
+}
 h1{
     text-align: center;
 }
@@ -6,12 +10,14 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 120px;
 }
 
 label{
     display: inline-block;
     width: 60px;
     margin: 3px;
+    color: bisque;
 }
 
 .botones{

@@ -43,7 +43,7 @@ label input{
     display: block;
 }
 aside {
-     display: flex;
+    display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center; 
@@ -61,4 +61,11 @@ a{
 
 aside a{
     padding: 2em;
+}
+
+.btn{
+    width: 160px;
+    height: 50px;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.689);
 }

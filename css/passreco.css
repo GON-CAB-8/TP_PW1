@@ -1,0 +1,39 @@
+h1{
+    text-align: center;
+}
+
+.cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label{
+    display: inline-block;
+    width: 60px;
+    margin: 3px;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+.botones input{
+    width: 160px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.enviar{
+    background-color: #a1ffa1;
+
+}
+
+.cancelar{
+background-color: #cc5c3f;
+}
+
+

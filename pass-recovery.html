@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/passreco.css">
     <title>CheFlix</title>
 </head>
 <body>
@@ -13,16 +14,19 @@
     </header>
 <main>
     <section>
-        <article>
+        <article class="cont">
             <form action="" method="get">
-                <label for="email">E-Mail</label>
+                <label for="email">E-Mail:</label>
                 <input type="email" name="email" id="email" required>
                 <br>
-                <label for="usuario">Usuario</label>
+                <label for="usuario">Usuario:</label>
                 <input type="text" name="usuario" id="usuario" required>
                 <br>
-                <input type="submit" value="Enviar Email">
-                <a href="index.html"><input type="button" value="Cancelar"></a>                
+                <br>
+                <div class="botones">
+                    <input type="submit" value="Enviar Email" class="enviar">
+                <a href="index.html"><input type="button" value="Cancelar" class="cancelar"></a>
+                </div>                
             </form>
         </article>
     </section>

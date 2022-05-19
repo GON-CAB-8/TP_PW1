@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/detail.css">
     <title>CheFlix</title>
 </head>
 <body>
@@ -18,42 +19,39 @@
         </nav>
     </header>
     <main>
-        <section>
-            <article class="contenedor">
-                <div>
-                    <!-- AGREGAR IMAGEN PROXIMAMENTE! -->
-                    <img src="./img/simuladores.jpg" alt="poster">
-                    <input type="button" value="Comenzar">
-                </div>
-                <div>
-                    <p class="cat">Título:</p>
-                    <p>Los simuladores</p>
-                    <br>
-                    <p class="cat">Duración:</p>
-                    <p>60 minutos</p>
-                    <br>
-                    <p class="cat">Género:</p>
-                    <p>Comedia, Drama</p>
-                    <br>
-                    <p class="cat">Actores:</p>
-                    <p>Federico D'Elía, Alejandro Fiore, Diego Peretti, Martín Seefeld</p>
-                    <br>
-                    <p class="cat">Sinopsis:</p>
-                    <p>Cuatro socios constituyen un equipo que busca la solución a los problemas que les plantean sus clientes, y para ello, organizan un sofisticado simulacro y crean una realidad falsa encarnando cada uno de ellos una función clara y definida.</p>
-                </div>
-            </article>
+        <section class="contenedor">
+            <div class="portada">
+                <img src="./img/simuladores.jpg" alt="poster">
+                <input type="button" value="Comenzar">
+            </div>
+            <div class="detalle">
+                <h3 class="cat">Título:</h3>
+                <p>Los simuladores</p>
+                <br>
+                <h3 class="cat">Duración:</h3>
+                <p>60 minutos</p>
+                <br>
+                <h3 class="cat">Género:</h3>
+                <p>Comedia, Drama</p>
+                <br>
+                <h3 class="cat">Actores:</h3>
+                <p>Federico D'Elía, Alejandro Fiore, Diego Peretti, Martín Seefeld</p>
+                <br>
+                <h3 class="cat">Sinopsis:</h3>
+                <p>Cuatro socios constituyen un equipo que busca la solución a los problemas que les plantean sus clientes, y para ello, organizan un sofisticado simulacro y crean una realidad falsa encarnando cada uno de ellos una función clara y definida.</p>
+            </div>
         </section>
-        <aside>
-            <article class="contenedor-aside">
-                <div><a href="detail-serie.html"><img src="./img/marginal.jpg" alt="Poster de"></a></div>
-                <div><a href="detail-serie.html"><img src="./img/mujeres.jpg" alt="Poster de"></a></div>
-                <div><a href="detail-serie.html"><img src="./img/tumberos.jpg" alt="Poster de"></a></div>
-                <div><a href="detail-serie.html"><img src="./img/rebelde.jpg" alt="Poster de"></a></div>
+        <aside class="contenedor-similares">
+            <article class="similares">
+                <div class="similar"><a href="detail-serie.html"><img src="./img/marginal.jpg" alt="Poster de"></a></div>
+                <div class="similar"><a href="detail-serie.html"><img src="./img/mujeres.jpg" alt="Poster de"></a></div>
+                <div class="similar"><a href="detail-serie.html"><img src="./img/rebelde.jpg" alt="Poster de"></a></div>
+                <div class="similar"><a href="detail-serie.html"><img src="./img/tumberos.jpg" alt="Poster de"></a></div>
             </article>
         </aside>
     </main>
     <footer>
-
+        <h4>&copy Todos los derechos reservados</h4>
     </footer>
 </body>
 </html>

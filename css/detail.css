@@ -1,0 +1,53 @@
+.contenedor{
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+}
+
+.contenedor .portada{
+    width: 30%;
+    margin: 0;
+    padding: 1em;
+}
+
+.contenedor .portada img{
+    width:100%;
+}
+
+.contenedor .portada input{
+    width: 100%;
+    background-color: rgb(52, 12, 196);
+    color: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    margin-top: 2em;
+}
+
+.contenedor .detalle{
+    width: 70%;
+    padding: 1em;
+}
+
+
+.similares{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5em;
+    margin:0.5em;
+}
+
+.similares .similar{
+    width: calc(25% - 0.5em);
+    margin: auto;
+}
+
+.similar img {
+    width: 100%;
+    transition: transform 1s;
+    transform: scale(1);
+}
+
+.similar img:hover{
+    transform: scale(1.1);
+}

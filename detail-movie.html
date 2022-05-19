@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="./css/detail.css">
     <title>CheFlix</title>
 </head>
 <body>
@@ -18,42 +19,39 @@
         </nav>
     </header>
     <main>
-        <section>
-            <article class="contenedor">
-                <div>
-                    <!-- AGREGAR IMAGEN PROXIMAMENTE! -->
-                    <img src="./img/esperando.jpg" alt="poster">
-                    <input type="button" value="Comenzar">
-                </div>
-                <div>
-                    <p class="cat">Título:</p>
-                    <p>Esperando la Carroza</p>
-                    <br>
-                    <p class="cat">Duración:</p>
-                    <p>95 minutos</p>
-                    <br>
-                    <p class="cat">Género:</p>
-                    <p>Comedia, Costumbres</p>
-                    <br>
-                    <p class="cat">Actores:</p>
-                    <p>Antonio Gasalla,China Zorrilla, Luis Brandoni</p>
-                    <br>
-                    <p class="cat">Sinopsis:</p>
-                    <p>La confusión invade a una familia luego de que Mamá Cora, una anciana de 80 años, desaparece. Aunque algunos creen que ha muerto, nada es tan sencillo como parece.</p>
-                </div>
-            </article>
+        <section class="contenedor">
+            <div class="portada">
+                <img src="./img/esperando.jpg" alt="poster esperando la carroza">
+                <input type="button" value="Comenzar">
+            </div>
+            <div class="detalle">
+                <h3 class="cat">Título:</h3>
+                <p>Esperando la Carroza</p>
+                <br>
+                <h3 class="cat">Duración:</h3>
+                <p>95 minutos</p>
+                <br>
+                <h3 class="cat">Género:</h3>
+                <p>Comedia, Costumbres</p>
+                <br>
+                <h3 class="cat">Actores:</h3>
+                <p>Antonio Gasalla,China Zorrilla, Luis Brandoni</p>
+                <br>
+                <h3 class="cat">Sinopsis:</h3>
+                <p>La confusión invade a una familia luego de que Mamá Cora, una anciana de 80 años, desaparece. Aunque algunos creen que ha muerto, nada es tan sencillo como parece.</p>
+            </div>
         </section>
-        <aside>
-            <article class="contenedor-aside">
-                <div><a href="detail-movie2.html"><img src="./img/relatos.jpg" alt=""></a></div>
-                <div><a href="detail-movie2.html"><img src="./img/carancho.jpg" alt=""></a></div>
-                <div><a href="detail-movie2.html"><img src="./img/ojos.jpg" alt=""></a></div>
-                <div><a href="detail-movie2.html"><img src="./img/necronomicon.jpg" alt=""></a></div>
+        <aside class="contenedor-similares">
+            <article class="similares">
+                <div class="similar"><a href="detail-movie2.html"><img src="./img/relatos.jpg" alt="portada relatos salvajes"></a></div>
+                <div class="similar"><a href="detail-movie.html"><img src="./img/carancho.jpg" alt="portada carancho"></a></div>
+                <div class="similar"><a href="detail-movie.html"><img src="./img/ojos.jpg" alt="portada el secreto de sus ojos"></a></div>
+                <div class="similar"><a href="detail-movie.html"><img src="./img/necronomicon.jpg" alt="portada necronomicon"></a></div>
             </article>
         </aside>
     </main>
     <footer>
-
+        <h4>&copy Todos los derechos reservados</h4>
     </footer>
 </body>
 </html>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/detail.css">
     <title>CheFlix</title>
 </head>
 <body>
@@ -18,41 +19,39 @@
         </nav>
     </header>
     <main>
-        <section>
-            <article class="contenedor">
-                <div>
-                    <img src="./img/marginal.jpg" alt="poster">
-                    <input type="button" value="Comenzar">
-                </div>
-                <div>
-                    <p class="cat">Título:</p>
-                    <p>El marginal</p>
-                    <br>
-                    <p class="cat">Duración:</p>
-                    <p>55 minutos</p>
-                    <br>
-                    <p class="cat">Género:</p>
-                    <p>Drama, accion</p>
-                    <br>
-                    <p class="cat">Actores:</p>
-                    <p>Juan Minujin, Martina Guzmán, Nicolás Furtado</p>
-                    <br>
-                    <p class="cat">Sinopsis:</p>
-                    <p>Miguel Palacios es un policía que está preso en una cárcel perdida en medio de la nada. Un día, un juez le convoca para que le ayude a resolver el secuestro de su hija.</p>
-                </div>
-            </article>
+        <section class="contenedor">
+            <div class="portada">
+                <img src="./img/marginal.jpg" alt="poster el marginal">
+                <input type="button" value="Comenzar">
+            </div>
+            <div class="detalle">
+                <h3 class="cat">Título:</h3>
+                <p>El marginal</p>
+                <br>
+                <h3 class="cat">Duración:</h3>
+                <p>55 minutos</p>
+                <br>
+                <h3 class="cat">Género:</h3>
+                <p>Drama, accion</p>
+                <br>
+                <h3 class="cat">Actores:</h3>
+                <p>Juan Minujin, Martina Guzmán, Nicolás Furtado</p>
+                <br>
+                <h3 class="cat">Sinopsis:</h3>
+                <p>Miguel Palacios es un policía que está preso en una cárcel perdida en medio de la nada. Un día, un juez le convoca para que le ayude a resolver el secuestro de su hija.</p>
+            </div>
         </section>
-        <aside>
-            <article class="contenedor-aside">
-                <div><a href="./detail-serie2.html"><img src="./img/simuladores.jpg" alt="portada de"></a></div>
-                <div><a href="./detail-serie2.html"><img src="./img/mujeres.jpg" alt="portada de"></a></div>
-                <div><a href="./detail-serie2.html"><img src="./img/rebelde.jpg" alt="portada de"></a></div>
-                <div><a href="./detail-serie2.html"><img src="./img/tumberos.jpg" alt="portada de"></a></div>
+        <aside class="contenedor-similares">
+            <article class="similares">
+                <div class="similar"><a href="./detail-serie2.html"><img src="./img/simuladores.jpg" alt="portada de los simuladores"></a></div>
+                <div class="similar"><a href="./detail-serie2.html"><img src="./img/mujeres.jpg" alt="portada de mujeres asesinas"></a></div>
+                <div class="similar"><a href="./detail-serie2.html"><img src="./img/rebelde.jpg" alt="portada de rebelde way"></a></div>
+                <div class="similar"><a href="./detail-serie2.html"><img src="./img/tumberos.jpg" alt="portada de tumberos"></a></div>
             </article>
         </aside>
     </main>
     <footer>
-
+        <h4>&copy Todos los derechos reservados</h4>
     </footer>
 </body>
 </html>

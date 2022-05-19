@@ -1,3 +1,6 @@
+body{
+    background-color: #faeee7;
+}
 .contenedor-perfil{
     display: flex;
     flex-wrap: wrap;

@@ -1,3 +1,6 @@
+body{
+    background-color: #faeee7;
+}
 .filtros{
     display: flex;
     flex-wrap: wrap;

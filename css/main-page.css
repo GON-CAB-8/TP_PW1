@@ -42,4 +42,62 @@
 }
 
 
+.peliculas{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5em;
+    margin:0.5em;
+}
+
+.peliculas .pelicula{
+    width: calc(20% - 0.5em);
+    margin: auto;
+}
+
+.pelicula img {
+    width: 100%;
+}
+
+.series{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5em;
+    margin:0.5em;
+}
+
+.series .serie{
+    width: calc(20% - 0.5em);
+    margin: auto;
+}
+
+.serie img {
+    width: 100%;
+}
+
+.mi-lista{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5em;
+    margin:0.5em;
+}
+
+.mi-lista .lista{
+    width: calc(20% - 0.5em);
+    margin: auto;
+}
+
+.lista img {
+    width: 100%;
+}
+
+img{
+    transition: transform 1s;
+    transform: scale(1);
+}
+img:hover{
+    transform: scale(1.1);
+}
 

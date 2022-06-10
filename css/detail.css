@@ -54,3 +54,25 @@ body{
 .similar img:hover{
     transform: scale(1.1);
 }
+
+a{
+    text-decoration: none;
+    color: #00f;
+}
+
+label{
+    font-weight: bold;
+}
+
+.detalle-temporadas-caps{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detalle-temporadas-caps .temporadas{
+    width: calc(50% - 1em);
+}
+
+.detalle-temporadas-caps .capitulos{
+    width: calc(50% - 1em);
+}

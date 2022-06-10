@@ -17,15 +17,6 @@ body{
     width:100%;
 }
 
-.contenedor .portada input{
-    width: 100%;
-    background-color: rgb(52, 12, 196);
-    color: #fff;
-    padding: 1em;
-    border-radius: 10px;
-    margin-top: 2em;
-}
-
 .contenedor .detalle{
     width: 70%;
     padding: 1em;
@@ -53,4 +44,47 @@ body{
 
 .similar img:hover{
     transform: scale(1.1);
+}
+
+.boton{
+    width: 100%;
+    background-color: rgb(52, 12, 196);
+    color: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    margin-top: 2em;
+    box-shadow: 5px 8px #999;
+}
+
+.boton:hover{
+    cursor: pointer;
+    background-color: rgb(42, 14, 141);
+}
+
+.boton:active{
+    background-color: rgb(42, 14, 141);
+    box-shadow: 3px 5px #666;
+    transform: translateY(4px);
+}
+
+a{
+    text-decoration: none;
+    color: #00f;
+}
+
+label{
+    font-weight: bold;
+}
+
+.detalle-temporadas-caps{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detalle-temporadas-caps .temporadas{
+    width: calc(50% - 1em);
+}
+
+.detalle-temporadas-caps .capitulos{
+    width: calc(50% - 1em);
 }

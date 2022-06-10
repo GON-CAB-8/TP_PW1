@@ -1,0 +1,33 @@
+body{
+    background-color: #faeee7;
+}
+
+h1{
+    text-align: center;
+    padding-top: 2em;
+}
+.series{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5em;
+    margin:0.5em;
+    height: 100%;
+}
+
+.series .serie{
+    width: calc(20% - 0.5em);
+    margin: auto;
+}
+
+.serie img {
+    width: 100%;
+}
+
+img{
+    transition: transform 1s;
+    transform: scale(1);
+}
+img:hover{
+    transform: scale(1.1);
+}

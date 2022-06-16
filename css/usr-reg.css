@@ -1,3 +1,11 @@
+header{
+    margin-top: 50px;
+}
+
+main{
+    margin-top: 130px;
+}
+
 body{
     background-image: url(../img/img03.jpg) ;
     background-size: cover;
@@ -17,16 +25,26 @@ body{
 
 label{
     display: inline-block;
-    width: 100px;
+    /* width: 100px; */
     margin: 7px;
 }
 
 .cont-atributos label{
     margin: 12px 0px;
+    width: 100px;
+}
+
+.cont-atributos input{
+    margin-left: 35px;
 }
 
 .cont-metodos div{
     margin-left: 60px;
+}
+
+.cont-metodos label{
+    text-align: center;
+    width: auto;
 }
 
 #nrocvv{

@@ -1,64 +1,74 @@
-body{
+body {
     background-color: #faeee7;
 }
-.contenedor-perfil{
-    display: flex;
-    flex-wrap: wrap;
+
+img {
+    height: 130px;
+    width: 130px;
 }
 
-.imagen-perfil{
-    width: 20%;
-    margin-left: 40px;
+.avatar {
+    inline-size: fit-content;
+    text-align: center;
+    display: block;
+    margin: 20px 100px;
 }
 
-.datos{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    gap: 10em;
-    width: auto;
-    margin-left: 50px;
+form {
+    outline: solid thin;
+    max-width: 850px;
+    margin: 10px auto;
+    padding: 1em;
+    margin-bottom: 20px;
 }
 
-.datos div{
-    width: calc(40% -10px);
-}
-
-label{
-    display: inline-block;
-    width: 100px;
-    margin: 7px;
-}
-
-.datos label{
-    margin: 12px 0px;
-    width: 200px;
-}
-
-.metodos div{
-    margin-left: 60px;
-}
-
-#nrocvv{
-    width: 30px;
-}
-
-.botones{
-    margin: 30px auto;
-    display: flex;
+.contenedor {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 
-.botones input{
+.col-1 {
+    grid-column: 1;
+}
+
+.col-2 {
+    grid-column: 2;
+}
+
+label {
+font-weight: bold;
+    display: inline-block;
+    width: auto;
+}
+
+.label_exception{
+    font-weight: 100;
+}
+
+#nrocvv {
+    width: 30px;
+}
+
+.botones {
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.botones input {
     width: 160px;
     height: 50px;
     border-radius: 5px;
 }
 
-.guardar{
+.guardar {
     background-color: #a1ffa1;
 }
 
-.cancelar{
-    background-color: #cc5c3f;    
+.cancelar {
+    background-color: #cc5c3f;
 }

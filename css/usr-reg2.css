@@ -14,7 +14,7 @@ form{
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 15px 40px;
 }
 
 .col-1{

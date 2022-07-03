@@ -1,5 +1,6 @@
 body{
-    background-image: url(../img/img01.jpg) ;
+    background-image: url(../img/index.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
 }
 header {
@@ -21,6 +22,7 @@ header h1{
     height: 120px;
     text-align: center;
     padding-top: 7px;
+    outline: solid thin;
 }
 
 .sing-in label{

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/profile.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="icon" type="image/x-icon" href="./icon/favicon-32x32.png">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/profile.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="icon" type="image/x-icon" href="./icon/favicon-32x32.png" />
     <title>CheFlix</title>
 </head>
+
 <body>
     <header>
         <nav class="menu-navegacion">
@@ -21,63 +23,73 @@
         </nav>
     </header>
     <main>
-        <section class="contenedor-perfil">
-            <article class="imagen-perfil">
-                <img src="./img/avatarchico.png" alt="avatar">
-                <p>User: UNLaM</p>
+        <section class="perfil">
+            <article class="avatar">
+                <img src="./img/avatarchico.png" alt="avatar" />
+                <p>Rodrigo Giorgio ♂️</p>
+                <p>Usuario Premium ⭐</p>
             </article>
             <article>
-                <form action="" class="datos">
-                    <div class="atrib">
-                        <label for="email">E-mail:</label>
-                        <input type="text" name="email" id="email" value="unlam@gmail.com" disabled>
-                        <br>
-                        <label for="pass">Contraseña:</label>
-                        <input type="text" name="pass" id="pass" value="***********" disabled>
-                        <br>
-                        <label for="newpass">Nueva Contraseña:</label>
-                        <input type="password" name="newpass" id="newpass">
-                        <br>
-                        <label for="newpassrepeat">Repetir Contraseña</label>
-                        <input type="password" name="newpassrepeat" id="newpassrepeat">
-                    </div>
-                    <div class="metodos">
-                        <h3>Método de Pago</h3>
-                        <input type="radio" name="metodo" id="credito">
-                        <label for="credito">Tarjeta de Crédito</label>
-                        <br>
-                        <div>
-                            <input type="text" name="nrotarjeta" id="nrotarjeta" placeholder="Numero de Tarjeta" maxlength="16" minlength="16">
-                            <input type="text" name="nrocvv" id="nrocvv" placeholder="XXX" maxlength="3" minlength="3">
+                <form action="" method="get">
+                    <div class="contenedor">
+                        <h2 class="col-1">Detalle de la Cuenta:</h2>
+                        <div class="col-1">
+                            <label for="email">E-mail:</label>
+                            <br />
+                            <input type="text" name="email" id="email" value="unlam@gmail.com" disabled />
                         </div>
-                        <br>
-                        <input type="radio" name="metodo" id="cupon">
-                        <label for="cupon">Cupón de Pago</label>
-                        <br>
-                        <div>
-                            <input type="checkbox" name="pagof" id="pagof">
-                        <label for="pagof">Pago Facil</label>
-                        <input type="checkbox" name="rapip" id="rapip">
-                        <label for="rapip">RapiPago</label>
+                        <div class="col-1">
+                            <label for="pass">Contraseña:</label>
+                            <br />
+                            <input type="text" name="pass" id="pass" value="***********" disabled />
                         </div>
-                        <br>
-                        <input type="radio" name="metodo" id="transfer">
-                        <label for="transfer">Transferencia Bancaria</label>
-                        <br>
-                        <div>
+                        <div class="col-1">
+                            <label for="newpass">Cambiar Contraseña:</label>
+                            <br />
+                            <input type="password" name="newpass" id="newpass" />
+                        </div>
+                        <div class="col-1">
+                            <label for="newpassrepeat">Repetir Contraseña:</label>
+                            <br />
+                            <input type="password" name="newpassrepeat" id="newpassrepeat" />
+                        </div>
+                        <h2 class="col-2">Facturación:</h2>
+                        <div class="col-2">
+                            <input type="radio" name="metodo" id="credito" />
+                            <label for="credito">Tarjeta de Crédito</label>
+                            <br />
+                            <input type="text" name="nrotarjeta" id="nrotarjeta" placeholder="Numero de Tarjeta"
+                                maxlength="16" minlength="16" />
+                            <input type="text" name="nrocvv" id="nrocvv" placeholder="XXX" maxlength="3"
+                                minlength="3" />
+                        </div>
+                        <div class="col-2">
+                            <input type="radio" name="metodo" id="cupon" />
+                            <label for="cupon">Cupón de Pago</label>
+                            <br />
+                            <input type="checkbox" name="pagof" id="pagof" />
+                            <label for="pagof" class="label_excepcion">Pago Facil</label>
+                            <input type="checkbox" name="rapip" id="rapip" />
+                            <label for="rapip" class="label_excepcion">RapiPago</label>
+                        </div>
+                        <div class="col-2">
+                            <input type="radio" name="metodo" id="transfer" />
+                            <label for="transfer">Transferencia Bancaria</label>
+                            <br />
                             <p>CBU: 362514444595959337723</p>
                         </div>
                     </div>
+                    <div class="botones">
+                        <a href="./index.html"><input type="submit" value="Guardar Cambios" class="guardar" /></a>
+                        <a href="./index.html"><input type="button" value="Cancelar Suscripción" class="cancelar" /></a>
+                    </div>
                 </form>
             </article>
-            <div class="botones">
-                <a href="./index.html"><input type="submit" value="Guardar Cambios" class="guardar"></a>
-                <a href="./index.html"><input type="button" value="Cancelar Suscripción" class="cancelar"></a>
-            </div>
-        </section>        
+        </section>
     </main>
     <footer>
         <h4>&copy Todos los derechos reservados</h4>
     </footer>
 </body>
+
 </html>

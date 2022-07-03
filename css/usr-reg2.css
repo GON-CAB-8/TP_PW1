@@ -1,5 +1,8 @@
 body{
-    background-color: #faeee7;
+    background-image: url(../img/img03.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:#faeee7;
 }
 
 form{

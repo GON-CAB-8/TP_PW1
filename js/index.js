@@ -6,7 +6,7 @@ $(document).ready(function(){
     function validar(){
         let error = 0;
 
-        if($("#user").val().length <= 0){
+        if($("#user").val().length <=0){
             error ++;
             console.log("A1");
         }

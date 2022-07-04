@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 body{
-    background-image: url(../img/img03.jpg) ;
+    background-image: url(../img/img03.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     color:#faeee7;
@@ -69,6 +71,9 @@ input.error, select.error{
 }
 
 #mensaje{
+    display: none;
+    outline: dotted thin crimson;
+    color: crimson;
     margin-top: 2em;
 }
 

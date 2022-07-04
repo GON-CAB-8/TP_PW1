@@ -46,8 +46,15 @@ if (!($("#rpass").val() === $("#pass").val())) {
     $("#rpass").addClass('error');
 }
 
+if ($("#nrocvv").val().length < 3 || $("#nrocvv").val() == "000" || !($("#nrocvv").val().match(regexSoloNumeros))){
+    error++;
+    mensaje += "<p>Ingrese una clave de tarjeta valida.</p>";
+    $("#nrocvv").addClass('error');
+}
+
 if(error > 0){
     $("#mensaje").append(mensaje);
+    $("#mensaje").show();    
     return false;
 }else{
     return true;
@@ -61,6 +68,7 @@ function reset(){
     $("#usrname").removeClass('error');
     $("#pass").removeClass('error');
     $("#rpass").removeClass('error');
+    $("#nrocvv").removeClass('error')
 
     $("#mensaje").empty();
 }
@@ -91,6 +99,10 @@ $(document).ready(function () {
     })
 
     $("#rpass").keyup(function(){
+        validarCampos();
+    })
+
+    $("#nrocvv").keyup(function(){
         validarCampos();
     })
 })

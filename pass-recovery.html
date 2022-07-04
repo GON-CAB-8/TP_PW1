@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/passreco.css">
     <link rel="icon" type="image/x-icon" href="./icon/favicon-32x32.png">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/pass-recovery.js"></script>
     <title>CheFlix</title>
 </head>
 <body>
@@ -16,18 +18,19 @@
 <main>
     <section>
         <article class="cont">
-            <form action="./index.html" method="get">
-                <label for="email">E-Mail:</label>
-                <input type="email" name="email" id="email" required>
-                <br>
-                <label for="usuario">Usuario:</label>
-                <input type="text" name="usuario" id="usuario" required>
-                <br>
-                <br>
+            <form id="pass-recovery-form" action="./index.html" method="GET">
+                <div class="email-group">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="usuario-group">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" name="usuario" id="usuario" required>
+                </div>
                 <div class="botones">
                     <input type="submit" value="Enviar Email" class="enviar">
                     <a href="./index.html"><input type="button" value="Cancelar" class="cancelar"></a>
-                </div>                
+                </div>             
             </form>
         </article>
     </section>

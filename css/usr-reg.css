@@ -64,5 +64,15 @@ label{
     background-color: #cc5c3f;
 }
 
+input.error, select.error{
+    border: 1px solid crimson;
+}
+
+#mensaje{
+    margin-top: 2em;
+}
+
+
+
 
 

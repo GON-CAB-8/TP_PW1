@@ -5,23 +5,26 @@ $(document).ready(function(){
 
     function validar(){
         let error = 0;
+        let mensajesError = "";
 
-        if($("#user").val().length <=0){
+        $("#mensaje").empty();
+        if($("#user").val().length <= 0){
             error ++;
-            console.log("A1");
+            mensajesError += '<p>Ingrese su usuario</p>';
         }
 
         if($("#password").val().length <=0){
             error ++;
-            console.log("A2");
+            mensajesError += '<p>Ingrese su contraseña</p>';
         }
 
         if(error > 0){
+            $("#mensaje").append(mensajesError);
             return false;
         } else {
-                let usuario = $("#user").val();
-                localStorage.setItem("usuario",usuario);
-                return true;
+            let usuario = $("#user").val();
+            localStorage.setItem("usuario",usuario);
+            return true;
         }
     }
 })

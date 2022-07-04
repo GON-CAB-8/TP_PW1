@@ -1,53 +1,96 @@
-let regexSoloLetras = /^[a-zA-Z]+$/;
-let regexSoloNumeros = /^[0-9]+$/;
-let regexAlfanumerico = /^[a-zA-Z0-9]+$/
-let regexEmail = /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
-let regexPass = /^(?=(.*[\d]){2,})(?=(.*[a-z]){2,})(?=(.*[A-Z]){2,})(?=(.*[@#$%!]){2,})(?:[\da-zA-Z@#$%!]){8}$/
+function validarCampos(){
+
+var regexSoloLetras = /^[a-zA-Z]+$/;
+var regexSoloNumeros = /^[0-9]+$/;
+var regexAlfanumerico = /^[a-zA-Z0-9]+$/
+var regexEmail = /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
+var regexPass = /^(?=(.*[\d]){2,})(?=(.*[a-z]){2,})(?=(.*[A-Z]){2,})(?=(.*[@#$%!]){2,})(?:[\da-zA-Z@#$%!]){8}$/
+var mensaje = "";
+var error = 0;
+
+reset();
+
+if (!$("#nombre").val().match(regexSoloLetras)) {
+    error++;
+    mensaje += "<p>Ingrese un Nombre valido (solo caracteres)</p>";
+    $("#nombre").addClass('error');
+}
+
+if (!$("#apellido").val().match(regexSoloLetras)) {
+    error++;
+    mensaje += "<p>Ingrese un Apellido valido (solo caracteres)</p>";
+    $("#apellido").addClass('error');
+}
+
+if (!$("#email").val().match(regexEmail)) {
+    error++;
+    mensaje += "<p>Ingrese un E-mail valido</p>";
+    $("#email").addClass('error');
+}
+
+if (!$("#usrname").val().match(regexAlfanumerico)) {
+    error++;
+    mensaje += "<p>Ingrese un Usuario valido (solo letras y numeros)</p>";
+    $("#usrname").addClass('error');
+}
+
+if (!$("#pass").val().match(regexPass)) {
+    error++;
+    mensaje += "<p>Ingrese una contraseña valida (8 digitos exactos, al menos 2 mayusculas, 2 minusculas, 2 caracteres especiales y 2 numeros)</p>";
+    $("#pass").addClass('error');
+}
+
+if (!($("#rpass").val() === $("#pass").val())) {
+    error++;
+    mensaje += "<p>Repita la contraseña correctamente.</p>";
+    $("#rpass").addClass('error');
+}
+
+if(error > 0){
+    $("#mensaje").append(mensaje);
+    return false;
+}else{
+    return true;
+}
+}
+
+function reset(){
+    $("#nombre").removeClass('error');
+    $("#apellido").removeClass('error');
+    $("#email").removeClass('error');
+    $("#usrname").removeClass('error');
+    $("#pass").removeClass('error');
+    $("#rpass").removeClass('error');
+
+    $("#mensaje").empty();
+}
 
 $(document).ready(function () {
     $("#form-registro").submit(function () {
-        return validar();
+        return validarCampos();
     })
 
-    function validar() {
-        var error = 0;
-        var mensajeAlert = "";
+    $("#nombre").keyup(function(){
+        validarCampos();
+    })
 
-        if (!$("#nombre").val().match(regexSoloLetras)) {
-            error++;
-            mensajeAlert += "Ingrese un Nombre valido (solo caracteres)\n";
-        }
+    $("#apellido").keyup(function(){
+        validarCampos();
+    })
 
-        if (!$("#apellido").val().match(regexSoloLetras)) {
-            error++;
-            mensajeAlert += "Ingrese un Apellido valido (solo caracteres)\n";
-        }
+    $("#email").keyup(function(){
+        validarCampos();
+    })
 
-        if (!$("#email").val().match(regexEmail)) {
-            error++;
-            mensajeAlert += "Ingrese un E-mail valido\n";
-        }
+    $("#usrname").keyup(function(){
+        validarCampos();
+    })
 
-        if (!$("#usrname").val().match(regexAlfanumerico)) {
-            error++;
-            mensajeAlert += "Ingrese un Usuario valido (solo letras y numeros)\n";
-        }
+    $("#pass").keyup(function(){
+        validarCampos();
+    })
 
-        if (!$("#pass").val().match(regexPass)) {
-            error++;
-            mensajeAlert += "Ingrese una contraseña valida (8 digitos exactos, al menos 2 mayusculas, 2 minusculas, 2 caracteres especiales y 2 numeros)\n";
-        }
-
-        if (!$("#rpass").val().match(("#pass").val())) {
-            error++;
-            mensajeAlert += "Repita la contraseña correctamente.\n";
-        }
-
-        if (error > 0) {
-            alert("HOLIS")
-            return false;
-        } else {
-            return true;
-        }
-    }
+    $("#rpass").keyup(function(){
+        validarCampos();
+    })
 })

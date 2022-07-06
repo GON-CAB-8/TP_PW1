@@ -1,9 +1,6 @@
 function validarCampos() {
 
-    var regexSoloLetras = /^[a-zA-Z]+$/;
     var regexSoloNumeros = /^[0-9]+$/;
-    var regexAlfanumerico = /^[a-zA-Z0-9]+$/
-    var regexEmail = /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
     var regexPass = /^(?=(.*[\d]){2,})(?=(.*[a-z]){2,})(?=(.*[A-Z]){2,})(?=(.*[@#$%!]){2,})(?:[\da-zA-Z@#$%!]){8}$/
     var regexTarjeta = /^(?:\d[ -]*?){16,19}$/
     var mensaje = "";
@@ -11,40 +8,16 @@ function validarCampos() {
 
     reset();
 
-    if (!$("#nombre").val().match(regexSoloLetras)) {
-        error++;
-        mensaje += "<p>Ingrese un Nombre valido (solo caracteres)</p>";
-        $("#nombre").addClass('error');
-    }
-
-    if (!$("#apellido").val().match(regexSoloLetras)) {
-        error++;
-        mensaje += "<p>Ingrese un Apellido valido (solo caracteres)</p>";
-        $("#apellido").addClass('error');
-    }
-
-    if (!$("#email").val().match(regexEmail)) {
-        error++;
-        mensaje += "<p>Ingrese un E-mail valido</p>";
-        $("#email").addClass('error');
-    }
-
-    if (!$("#usrname").val().match(regexAlfanumerico)) {
-        error++;
-        mensaje += "<p>Ingrese un Usuario valido (solo letras y numeros)</p>";
-        $("#usrname").addClass('error');
-    }
-
-    if (!$("#pass").val().match(regexPass)) {
+    if (!$("#newpass").val().match(regexPass)) {
         error++;
         mensaje += "<p>Ingrese una contraseña valida (8 digitos exactos, al menos 2 mayusculas, 2 minusculas, 2 caracteres especiales y 2 numeros)</p>";
-        $("#pass").addClass('error');
+        $("#newpass").addClass('error');
     }
 
-    if (!($("#rpass").val() === $("#pass").val())) {
+    if (!($("#newpassrepeat").val() === $("#newpass").val())) {
         error++;
         mensaje += "<p>Repita la contraseña correctamente.</p>";
-        $("#rpass").addClass('error');
+        $("#newpassrepeat").addClass('error');
     }
 
     if ($('input[id="credito"]').is(':checked')) {
@@ -62,31 +35,55 @@ function validarCampos() {
             $("#nrocvv").addClass('error');
         }
     }
+    
+    if($('input[id="cupon"]').is(':checked')){
+        if(!($('input[id="pagof"]').is(':checked')) && !($('input[id="rapip"]').is(':checked'))){
+            error++;
+            mensaje += "<p>Seleccione Como desea Debitar el pago (PagoFacil o Rapipago).</p>"
+        }
+    }
+
 
     if (!($('input[name="metodo"]').is(':checked'))) {
-    mensaje+= "<p>Debe seleccionar un metodo de pago</p>";  
-    error++;
-}
-
+        mensaje += "<p>Debe seleccionar un metodo de pago</p>";
+        error++;
+    }
 
     if (error > 0) {
         $("#mensaje").append(mensaje);
         $("#mensaje").show();
         return true;
     } else {
-        $("#btn_submit").prop("disabled", false);
-        $("#mensaje").hide();
+        $("#btn_submit").prop("disabled", false); //Si esta todo correcto desabilita el disabled del boton submit
+        $("#mensaje").hide(); // esconde el div de errores.
+
+        //SETEAR LOS LOCAL STORAGE SEGUN QUE INPUT ESTE PRENDIDO:
+        if ($('input[id="credito"]').is(':checked')) {
+            let tarjetaDeCredito = { numero: $("#nrotarjeta").val(), cvv: $("#nrocvv").val() };
+            localStorage.setItem('datosTarjeta', tarjetaDeCredito);
+        } else if ($('input[id="cupon"]').is(':checked')) {
+            if ($('input[id="pagof"]').is(':checked') && $('input[id="rapip"]').is(':checked')) {
+                let cupon = { tipo: "PagoFacil", tipo: "RapiPago" };
+                localStorage.setItem('cupon', cupon);
+            } else if ($('input[id="rapip"]').is(':checked')) {
+                let cupon = { tipo: "RapiPago" };
+                localStorage.setItem('cupon', cupon);
+            } else if ($('input[id="pagof"]').is(':checked')) {
+                let cupon = { tipo: "PagoFacil" };
+                localStorage.setItem('cupon', cupon);
+            }
+        } else {
+            let transfer = { CBU: "362514444595959337723" }
+            localStorage.setItem('transferencia', transfer);
+        }
+
         return false;
     }
 }
 
 function reset() {
-    $("#nombre").removeClass('error');
-    $("#apellido").removeClass('error');
-    $("#email").removeClass('error');
-    $("#usrname").removeClass('error');
-    $("#pass").removeClass('error');
-    $("#rpass").removeClass('error');
+    $("#newpass").removeClass('error');
+    $("#newpassrepeat").removeClass('error');
     $("#nrotarjeta").removeClass('error')
     $("#nrocvv").removeClass('error');
 
@@ -99,7 +96,7 @@ function validarNumerosTarjeta(numerotarjeta) {
     for (let i = 0; i <= numerotarjeta.length - 2; i++) {
         sum += Number(numerotarjeta[i]);
     }
-    console.log(sum);
+
     if (sum % 2 == numerotarjeta.charAt(numerotarjeta.length - 1) % 2) {
         return false;
     } else {
@@ -110,6 +107,8 @@ function validarNumerosTarjeta(numerotarjeta) {
 
 
 $(document).ready(function () {
+    let nombreUsuario = localStorage.getItem('usuario');
+    $("#nombreUsuario").html(nombreUsuario);
 
     $("#btn_submit").prop("disabled", true);
 
@@ -117,27 +116,12 @@ $(document).ready(function () {
         return validarCampos();
     })
 
-    $("#nombre").keyup(function () {
+
+    $("#newpass").keyup(function () {
         validarCampos();
     })
 
-    $("#apellido").keyup(function () {
-        validarCampos();
-    })
-
-    $("#email").keyup(function () {
-        validarCampos();
-    })
-
-    $("#usrname").keyup(function () {
-        validarCampos();
-    })
-
-    $("#pass").keyup(function () {
-        validarCampos();
-    })
-
-    $("#rpass").keyup(function () {
+    $("#newpassrepeat").keyup(function () {
         validarCampos();
     })
 
@@ -149,7 +133,7 @@ $(document).ready(function () {
         validarCampos();
     })
 
-    $('input[name="metodo"]').change(function() {
+    $('input[name="metodo"]').change(function () {
         validarCampos();
     })
 

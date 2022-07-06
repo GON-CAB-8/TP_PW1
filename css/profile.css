@@ -59,16 +59,30 @@ font-weight: bold;
     justify-content: center;
 }
 
-.botones input {
+.guardar {
     width: 160px;
     height: 50px;
     border-radius: 5px;
-}
-
-.guardar {
     background-color: #a1ffa1;
 }
 
 .cancelar {
+    width: 160px;
+    height: 50px;
+    border-radius: 5px;
     background-color: #cc5c3f;
+}
+
+input.error, select.error{
+    border: 1px solid crimson;
+}
+
+#mensaje{
+    /* font-family: 'Share Tech Mono', monospace; */
+    display: none;
+    outline: dotted thin crimson;
+    color: crimson;
+    margin: 2em auto; 
+    max-width: fit-content;
+    max-height: fit-content;
 }

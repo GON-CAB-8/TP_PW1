@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="icon" type="image/x-icon" href="./icon/favicon-32x32.png">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/main-page.js"></script>
     <title>CheFlix</title>
 </head>
 <body>
@@ -17,53 +19,73 @@
             <a href="./series.html"><i class="fa-solid fa-film"></i>Series</a>
             <a href="./peliculas.html"><i class="fa-solid fa-film"></i>Peliculas</a>
             <a href="./profile.html"><i class="fa-solid fa-address-card"></i>Perfil</a>
+            <a id="logout" href="./index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesión</a>
         </nav>
     </header>
     <main>
         <section class="filtros">
             <div class="categoria">
-                <label id="categoria" for="categorias">Filtre por Categoría:</label>
-                
-                <select name="categorias" id="categorias">
+                <div class="genero">
+                    <label id="categoria" for="categorias">Filtre por Categoría:</label>
+                    <select name="categorias" id="categorias">
                     <option value="0">Seleccione una Categoría</option>
                     <option value="terror">Terror</option>
-                    <option value="fantasia">Fantasia</option>
-                    <option value="romance">Romance</option>
                     <option value="comedia">Comedia</option>
-                    <option value="comedia">Thriller</option>
-                    <option value="comedia">Policial</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="suspenso">Suspenso</option>
                 </select>
+                </div>
+                <div class="series-peliculas">
+                    <button id="todo">Todo</button>
+                    <button id="pelicula">Películas</button>
+                    <button id="serie">Series</button>
+                </div>
             </div>
             <div class="busqueda">
                 <input type="text" name="search" id="busqueda-text" placeholder="Busque por nombre...">
                 <button id="lupa" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </section>
-        <section class="grilla">
-            <h3>Peliculas</h3>
-            <article class="peliculas">
-                <div class="pelicula"><a href="./detail-movie.html"><img src="./img/esperando.jpg" alt="portada esperando la Carroza"></a></div>
-                <div class="pelicula"><a href="./detail-movie2.html"><img src="./img/relatos.jpg" alt="portada relatos salvajes"></a></div>
-                <div class="pelicula"><a href="detail-movie.html"><img src="./img/carancho.jpg" alt="portada carancho"></a></div>
-                <div class="pelicula"><a href="./detail-movie.html"><img src="./img/ojos.jpg" alt="portada el secreto de sus ojos"></a></div>
-                <div class="pelicula"><a href="./detail-movie.html"><img src="./img/necronomicon.jpg" alt="portada necronomicon"></a></div>
-            </article>
-            <h3>Series</h3>
-            <article class="series">
-                <div class="serie"><a href="./detail-serie.html"><img src="./img/marginal.jpg" alt="portada de el marginal"></a></div>
-                <div class="serie"><a href="./detail-serie2.html"><img src="./img/simuladores.jpg" alt="portada de los simuladores"></a></div>
-                <div class="serie"><a href="./detail-serie2.html"><img src="./img/mujeres.jpg" alt="portada de mujeres asesinas"></a></div>
-                <div class="serie"><a href="detail-serie2.html"><img src="./img/rebelde.jpg" alt="portada de rebelde way"></a></div>
-                <div class="serie"><a href="./detail-serie2.html"><img src="./img/tumberos.jpg" alt="portada de tumberos"></a></div>
-            </article>
-            <h3>Continuar viendo...</h3>
-            <article class="mi-lista">
-                <div class="lista"><a href="./detail-movie.html"><img src="./img/aura.jpg" alt="portada de el aura"></a></div>
-                <div class="lista"><a href="./detail-movie.html"><img src="./img/amiga.jpg" alt="portada de mi amiga del parque"></a></div>
-                <div class="lista"><a href="./detail-movie.html"><img src="./img/clan.jpg" alt="portada de el clan"></a></div>
-                <div class="lista"><a href="detail-movie.html"><img src="./img/historia.jpg" alt="portada de la historia oficial"></a></div>
-                <div class="lista"><a href="./detail-movie.html"><img src="./img/odisea.jpg" alt="portada de la odisea de los giles"></a></div>
-            </article>
+        <section id="grilla">
+                <div class="poster pelicula comedia"><a href="./detail-movie.html"><img src="./img/esperando.jpg" alt="portada esperando la Carroza"></a></div>
+
+                <div class="poster serie thriller"><a href="./detail-serie.html"><img src="./img/marginal.jpg" alt="portada de el marginal"></a></div>
+
+                <div class="poster pelicula suspenso"><a href="./detail-movie2.html"><img src="./img/relatos.jpg" alt="portada relatos salvajes"></a></div>
+
+                <div class="poster serie thriller"><a href="./detail-serie2.html"><img src="./img/simuladores.jpg" alt="portada de los simuladores"></a></div>
+
+                <div class="poster serie suspenso"><a href="./detail-serie2.html"><img src="./img/mujeres.jpg" alt="portada de mujeres asesinas"></a></div>
+
+                <div class="poster pelicula comedia"><a href="detail-movie.html"><img src="./img/carancho.jpg" alt="portada carancho"></a></div>
+
+                <div class="poster serie comedia"><a href="detail-serie2.html"><img src="./img/rebelde.jpg" alt="portada de rebelde way"></a></div>
+
+                <div class="poster pelicula thriller"><a href="./detail-movie.html"><img src="./img/ojos.jpg" alt="portada el secreto de sus ojos"></a></div>
+
+                <div class="poster pelicula terror"><a href="./detail-movie.html"><img src="./img/necronomicon.jpg" alt="portada necronomicon"></a></div>
+
+                <div class="poster pelicula terror"><a href="./detail-movie.html"><img src="./img/aura.jpg" alt="portada de el aura"></a></div>
+
+                <div class="poster serie thriller"><a href="./detail-serie.html"><img src="./img/apache.jpg" alt="portada de apache"></a></div>
+
+                <div class="poster pelicula comedia"><a href="./detail-movie.html"><img src="./img/amiga.jpg" alt="portada de mi amiga del parque"></a></div>
+
+                <div class="poster serie thriller"><a href="./detail-serie2.html"><img src="./img/tumberos.jpg" alt="portada de tumberos"></a></div>
+
+                <div class="poster serie thriller"><a href="./detail-serie2.html"><img src="./img/el-puntero.jpg" alt="portada del puntero"></a></div>
+
+                <div class="poster serie comedia"><a href="./detail-serie.html"><img src="./img/hermanos-y-detectives.jpg" alt="portada de hermanos y detectives"></a></div>
+
+                <div class="poster pelicula suspenso"><a href="./detail-movie.html"><img src="./img/clan.jpg" alt="portada de el clan"></a></div>
+
+                <div class="poster serie suspenso"><a href="./detail-serie2.html"><img src="./img/historia-de-un-clan.jpg" alt="portada de historia de un clan"></a></div>
+
+                <div class="poster pelicula suspenso"><a href="detail-movie.html"><img src="./img/historia.jpg" alt="portada de la historia oficial"></a></div>
+
+                <div class="poster pelicula comedia"><a href="./detail-movie.html"><img src="./img/odisea.jpg" alt="portada de la odisea de los giles"></a></div>
+
+                <div class="poster serie terror"><a href="./detail-serie2.html"><img src="./img/la-fragilidad-de-los-cuerpos.jpg" alt="portada de la fragilidad de los cuerpos"></a></div>
         </section>
     </main>
     <footer>

@@ -9,7 +9,7 @@
 }
 
 .menu-navegacion a{
-    width: calc(25% - 0.1em);
+    width: calc(20% - 0.1em);
     color: #000;
     text-decoration: none;
     border: 1px solid #000;

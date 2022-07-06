@@ -7,18 +7,40 @@ body{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 0.5em;
-    margin-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin: 0em 1.5em 3em 1.5em;
     height: 4em;
+    /* margin-bottom: 3em; */
 }
+
 .busqueda {
     width: 50%;
     height: 85%;
 }
 .categoria{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     width: 50%;
-    height: 85%;
+    height: 100%;
 }
+.genero{
+    width: 50%;
+}
+
+.series-peliculas{
+    width: 50%;   
+}
+
+.series-peliculas button{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.series-peliculas button:hover{
+    cursor: pointer;
+}
+
 #busqueda-text {
     display: block;
     float: right;
@@ -44,55 +66,21 @@ body{
     cursor: pointer;
 }
 
-
-.peliculas{
+#grilla{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 0.5em;
-    margin:0.5em;
+    padding-top: 2em;
+    margin:0em 1.5em 1.5em 1.5em;
 }
 
-.peliculas .pelicula{
+#grilla .poster{
     width: calc(20% - 0.5em);
     margin: auto;
 }
 
-.pelicula img {
-    width: 100%;
-}
-
-.series{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 0.5em;
-    margin:0.5em;
-}
-
-.series .serie{
-    width: calc(20% - 0.5em);
-    margin: auto;
-}
-
-.serie img {
-    width: 100%;
-}
-
-.mi-lista{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 0.5em;
-    margin:0.5em;
-}
-
-.mi-lista .lista{
-    width: calc(20% - 0.5em);
-    margin: auto;
-}
-
-.lista img {
+#grilla .poster img{
     width: 100%;
 }
 
@@ -104,3 +92,6 @@ img:hover{
     transform: scale(1.1);
 }
 
+.none{
+    display: none;
+}

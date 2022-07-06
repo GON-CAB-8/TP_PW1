@@ -47,16 +47,20 @@ function validarCampos() {
         $("#rpass").addClass('error');
     }
 
-    if (!($("#nrotarjeta").val().match(regexTarjeta)) || !validarNumerosTarjeta($("#nrotarjeta").val())) {
-        error++;
-        mensaje += "<p>Ingrese un numero de Tarjeta de credito valido.</p>";
-        $("#nrotarjeta").addClass('error');
+    if ($('input[id="credito"]').is(':checked')) {
+        if (!($("#nrotarjeta").val().match(regexTarjeta)) || !validarNumerosTarjeta($("#nrotarjeta").val())) {
+            error++;
+            mensaje += "<p>Ingrese un numero de Tarjeta de credito valido.</p>";
+            $("#nrotarjeta").addClass('error');
+        }
     }
 
-    if ($("#nrocvv").val().length < 3 || $("#nrocvv").val() == "000" || !($("#nrocvv").val().match(regexSoloNumeros))) {
-        error++;
-        mensaje += "<p>Ingrese una clave de tarjeta valida.</p>";
-        $("#nrocvv").addClass('error');
+    if ($('input[id="credito"]').is(':checked')) {
+        if ($("#nrocvv").val().length < 3 || $("#nrocvv").val() == "000" || !($("#nrocvv").val().match(regexSoloNumeros))) {
+            error++;
+            mensaje += "<p>Ingrese una clave de tarjeta valida.</p>";
+            $("#nrocvv").addClass('error');
+        }
     }
 
     if (!($('input[name="metodo"]').is(':checked'))) {

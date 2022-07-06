@@ -20,49 +20,60 @@ function validarCampos() {
         $("#newpassrepeat").addClass('error');
     }
 
-    if (!($("#nrotarjeta").val().match(regexTarjeta)) || !validarNumerosTarjeta($("#nrotarjeta").val())) {
-        error++;
-        mensaje += "<p>Ingrese un numero de Tarjeta de credito valido.</p>";
-        $("#nrotarjeta").addClass('error');
+    if ($('input[id="credito"]').is(':checked')) {
+        if (!($("#nrotarjeta").val().match(regexTarjeta)) || !validarNumerosTarjeta($("#nrotarjeta").val())) {
+            error++;
+            mensaje += "<p>Ingrese un numero de Tarjeta de credito valido.</p>";
+            $("#nrotarjeta").addClass('error');
+        }
     }
 
-    if ($("#nrocvv").val().length < 3 || $("#nrocvv").val() == "000" || !($("#nrocvv").val().match(regexSoloNumeros))) {
-        error++;
-        mensaje += "<p>Ingrese una clave de tarjeta valida.</p>";
-        $("#nrocvv").addClass('error');
+    if ($('input[id="credito"]').is(':checked')) {
+        if ($("#nrocvv").val().length < 3 || $("#nrocvv").val() == "000" || !($("#nrocvv").val().match(regexSoloNumeros))) {
+            error++;
+            mensaje += "<p>Ingrese una clave de tarjeta valida.</p>";
+            $("#nrocvv").addClass('error');
+        }
     }
+    
+    if($('input[id="cupon"]').is(':checked')){
+        if(!($('input[id="pagof"]').is(':checked')) && !($('input[id="rapip"]').is(':checked'))){
+            error++;
+            mensaje += "<p>Seleccione Como desea Debitar el pago (PagoFacil o Rapipago).</p>"
+        }
+    }
+
 
     if (!($('input[name="metodo"]').is(':checked'))) {
-    mensaje+= "<p>Debe seleccionar un metodo de pago</p>";  
-    error++;
-}
+        mensaje += "<p>Debe seleccionar un metodo de pago</p>";
+        error++;
+    }
 
     if (error > 0) {
         $("#mensaje").append(mensaje);
         $("#mensaje").show();
         return true;
     } else {
-        $("#btn_submit").prop("disabled", false); //Si esta todo correcto desabilita el disabled del boton
+        $("#btn_submit").prop("disabled", false); //Si esta todo correcto desabilita el disabled del boton submit
         $("#mensaje").hide(); // esconde el div de errores.
 
-
         //SETEAR LOS LOCAL STORAGE SEGUN QUE INPUT ESTE PRENDIDO:
-        if( $('input[id="credito"]').is(':checked')){
-            let tarjetaDeCredito = {numero: $("#nrotarjeta").val(), cvv: $("#nrocvv").val()};
+        if ($('input[id="credito"]').is(':checked')) {
+            let tarjetaDeCredito = { numero: $("#nrotarjeta").val(), cvv: $("#nrocvv").val() };
             localStorage.setItem('datosTarjeta', tarjetaDeCredito);
-        }else if ($('input[id="cupon"]').is(':checked')){
-            if($('input[id="pagof"]').is(':checked') && $('input[id="rapip"]').is(':checked')){
-                let cupon = {tipo: "PagoFacil", tipo: "RapiPago"};
+        } else if ($('input[id="cupon"]').is(':checked')) {
+            if ($('input[id="pagof"]').is(':checked') && $('input[id="rapip"]').is(':checked')) {
+                let cupon = { tipo: "PagoFacil", tipo: "RapiPago" };
                 localStorage.setItem('cupon', cupon);
-            }else if ($('input[id="rapip"]').is(':checked')){
-                let cupon = {tipo: "RapiPago"};
+            } else if ($('input[id="rapip"]').is(':checked')) {
+                let cupon = { tipo: "RapiPago" };
                 localStorage.setItem('cupon', cupon);
-            }else if ($('input[id="pagof"]').is(':checked')){
-                let cupon = {tipo: "PagoFacil"};
+            } else if ($('input[id="pagof"]').is(':checked')) {
+                let cupon = { tipo: "PagoFacil" };
                 localStorage.setItem('cupon', cupon);
             }
-        } else{
-            let transfer = {CBU: "362514444595959337723"}
+        } else {
+            let transfer = { CBU: "362514444595959337723" }
             localStorage.setItem('transferencia', transfer);
         }
 
@@ -85,7 +96,7 @@ function validarNumerosTarjeta(numerotarjeta) {
     for (let i = 0; i <= numerotarjeta.length - 2; i++) {
         sum += Number(numerotarjeta[i]);
     }
-    console.log(sum);
+
     if (sum % 2 == numerotarjeta.charAt(numerotarjeta.length - 1) % 2) {
         return false;
     } else {
@@ -122,7 +133,7 @@ $(document).ready(function () {
         validarCampos();
     })
 
-    $('input[name="metodo"]').change(function() {
+    $('input[name="metodo"]').change(function () {
         validarCampos();
     })
 

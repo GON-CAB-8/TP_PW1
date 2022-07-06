@@ -59,11 +59,20 @@ function validarCampos() {
         $("#nrocvv").addClass('error');
     }
 
+    if (!($('input[name="metodo"]').is(':checked'))) {
+    mensaje+= "<p>Debe seleccionar un metodo de pago</p>";  
+    error++;
+}
+
+    console.log(error);
+
     if (error > 0) {
         $("#mensaje").append(mensaje);
         $("#mensaje").show();
         return true;
     } else {
+        $("#btn_submit").prop("disabled", false);
+        $("#mensaje").hide();
         return false;
     }
 }
@@ -95,7 +104,12 @@ function validarNumerosTarjeta(numerotarjeta) {
     }
 }
 
+
+
 $(document).ready(function () {
+
+    $("#btn_submit").prop("disabled", true);
+
     $("#form-registro").submit(function () {
         return validarCampos();
     })
@@ -129,6 +143,10 @@ $(document).ready(function () {
     })
 
     $("#nrocvv").keyup(function () {
+        validarCampos();
+    })
+
+    $('input[name="metodo"]').change(function() {
         validarCampos();
     })
 

@@ -20,7 +20,7 @@
     <main>
         <article>
             <section>
-                <form action="" method="get" id="form-registro">
+                <form action="./index.html" method="get" id="form-registro">
                     <div class="contenedor">
                         <div class="col-1">
                             <label for="nombre">Nombre:</label>
@@ -58,7 +58,7 @@
                             <label for="credito">Tarjeta de Crédito</label>
                             <br>
                             <input type="text" name="nrotarjeta" id="nrotarjeta" placeholder="Numero de Tarjeta"
-                            maxlength="16" minlength="16">
+                            maxlength="19" minlength="16">
                             <input type="text" name="nrocvv" id="nrocvv" placeholder="XXX" maxlength="3" minlength="3">
                         </div>
                         <div class="col-2">
@@ -77,12 +77,11 @@
                         </div>
                     </div>
                     <div class="botones">
-                        <a href="./index.html"><input type="submit" value="Confirmar" class="confirmar"></a>
-                        <a href="./index.html"><input type="button" value="Cancelar" class="cancelar"></a>
+                        <a href="./index.html"><input type="submit" form="#form-registro" value="Confirmar" class="confirmar" id="btn_submit"></a>
+                        <a href="./index.html"><button class="cancelar">Cancelar</button></a>
                     </div>
                 </form>
                 <div id="mensaje" class="error">
-
                 </div>
             </section>
         </article>

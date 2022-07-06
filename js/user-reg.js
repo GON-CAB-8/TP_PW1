@@ -47,13 +47,13 @@ function validarCampos() {
         $("#rpass").addClass('error');
     }
 
-    if (!($("#nrotarjeta").val().match(regexTarjeta)) || validarNumerosTarjeta($("#nrotarjeta"))) {
+    if (!($("#nrotarjeta").val().match(regexTarjeta)) || !validarNumerosTarjeta($("#nrotarjeta").val())) {
         error++;
         mensaje += "<p>Ingrese un numero de Tarjeta de credito valido.</p>";
         $("#nrotarjeta").addClass('error');
     }
 
-    if ($("#nrocvv").val().length < 3 && $("#nrocvv").val() == "000" || !($("#nrocvv").val().match(regexSoloNumeros))) {
+    if ($("#nrocvv").val().length < 3 || $("#nrocvv").val() == "000" || !($("#nrocvv").val().match(regexSoloNumeros))) {
         error++;
         mensaje += "<p>Ingrese una clave de tarjeta valida.</p>";
         $("#nrocvv").addClass('error');
@@ -62,9 +62,9 @@ function validarCampos() {
     if (error > 0) {
         $("#mensaje").append(mensaje);
         $("#mensaje").show();
-        return false;
-    } else {
         return true;
+    } else {
+        return false;
     }
 }
 
@@ -85,9 +85,9 @@ function validarNumerosTarjeta(numerotarjeta) {
     let sum = 0;
 
     for (let i = 0; i <= numerotarjeta.length - 2; i++) {
-        sum += numerotarjeta.charAt(i);
+        sum += Number(numerotarjeta[i]);
     }
-
+    console.log(sum);
     if (sum % 2 == numerotarjeta.charAt(numerotarjeta.length - 1) % 2) {
         return false;
     } else {

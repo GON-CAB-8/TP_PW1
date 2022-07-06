@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
+
 body{
     background-image: url(../img/img03.jpg);
     background-size: cover;
@@ -71,6 +72,7 @@ input.error, select.error{
 }
 
 #mensaje{
+    /* font-family: 'Share Tech Mono', monospace; */
     display: none;
     outline: dotted thin crimson;
     color: crimson;

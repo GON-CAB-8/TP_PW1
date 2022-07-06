@@ -1,8 +1,5 @@
 function validarCampos() {
 
-    // var regexSoloLetras = /^[a-zA-Z]+$/;
-    // var regexAlfanumerico = /^[a-zA-Z0-9]+$/
-    // var regexEmail = /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
     var regexSoloNumeros = /^[0-9]+$/;
     var regexPass = /^(?=(.*[\d]){2,})(?=(.*[a-z]){2,})(?=(.*[A-Z]){2,})(?=(.*[@#$%!]){2,})(?:[\da-zA-Z@#$%!]){8}$/
     var regexTarjeta = /^(?:\d[ -]*?){16,19}$/
@@ -45,8 +42,30 @@ function validarCampos() {
         $("#mensaje").show();
         return true;
     } else {
-        $("#btn_submit").prop("disabled", false);
-        $("#mensaje").hide();
+        $("#btn_submit").prop("disabled", false); //Si esta todo correcto desabilita el disabled del boton
+        $("#mensaje").hide(); // esconde el div de errores.
+
+
+        //SETEAR LOS LOCAL STORAGE SEGUN QUE INPUT ESTE PRENDIDO:
+        if( $('input[id="credito"]').is(':checked')){
+            let tarjetaDeCredito = {numero: $("#nrotarjeta").val(), cvv: $("#nrocvv").val()};
+            localStorage.setItem('datosTarjeta', tarjetaDeCredito);
+        }else if ($('input[id="cupon"]').is(':checked')){
+            if($('input[id="pagof"]').is(':checked') && $('input[id="rapip"]').is(':checked')){
+                let cupon = {tipo: "PagoFacil", tipo: "RapiPago"};
+                localStorage.setItem('cupon', cupon);
+            }else if ($('input[id="rapip"]').is(':checked')){
+                let cupon = {tipo: "RapiPago"};
+                localStorage.setItem('cupon', cupon);
+            }else if ($('input[id="pagof"]').is(':checked')){
+                let cupon = {tipo: "PagoFacil"};
+                localStorage.setItem('cupon', cupon);
+            }
+        } else{
+            let transfer = {CBU: "362514444595959337723"}
+            localStorage.setItem('transferencia', transfer);
+        }
+
         return false;
     }
 }

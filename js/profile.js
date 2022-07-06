@@ -77,6 +77,8 @@ function validarNumerosTarjeta(numerotarjeta) {
 
 
 $(document).ready(function () {
+    let nombreUsuario = localStorage.getItem('usuario');
+    $("#nombreUsuario").html(nombreUsuario);
 
     $("#btn_submit").prop("disabled", true);
 

@@ -83,4 +83,6 @@ input.error, select.error{
     outline: dotted thin crimson;
     color: crimson;
     margin-top: 2em;
+    max-width: fit-content;
+    max-height: fit-content;
 }

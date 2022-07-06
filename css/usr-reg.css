@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
 body{
-    background-image: url(../img/img03.jpg) ;
+    background-image: url(../img/img03.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     color:#faeee7;
@@ -50,17 +53,18 @@ label{
     justify-content: center;
 }
 
-.botones input {
+
+.confirmar {
     width: 160px;
     height: 50px;
     border-radius: 5px;
-}
-
-.confirmar {
     background-color: #a1ffa1;
 }
 
 .cancelar {
+    width: 160px;
+    height: 50px;
+    border-radius: 5px;
     background-color: #cc5c3f;
 }
 
@@ -69,6 +73,10 @@ input.error, select.error{
 }
 
 #mensaje{
+    /* font-family: 'Share Tech Mono', monospace; */
+    display: none;
+    outline: dotted thin crimson;
+    color: crimson;
     margin-top: 2em;
 }
 

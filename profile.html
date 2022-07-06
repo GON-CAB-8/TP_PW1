@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/profile.css" />
     <link rel="stylesheet" href="./css/footer.css" />
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/profile.js"></script>
     <link rel="icon" type="image/x-icon" href="./icon/favicon-32x32.png" />
     <title>CheFlix</title>
 </head>
@@ -27,17 +29,17 @@
         <section class="perfil">
             <article class="avatar">
                 <img src="./img/avatarchico.png" alt="avatar" />
-                <p>Rodrigo Giorgio ♂️</p>
+                <p></p>
                 <p>Usuario Premium ⭐</p>
             </article>
             <article>
-                <form action="" method="get">
+                <form action="./main-page.html" method="get" id="form-perfil">
                     <div class="contenedor">
                         <h2 class="col-1">Detalle de la Cuenta:</h2>
                         <div class="col-1">
                             <label for="email">E-mail:</label>
                             <br />
-                            <input type="text" name="email" id="email" value="unlam@gmail.com" disabled />
+                            <input type="text" name="email" id="email" value="unlam@unlam.edu.ar" disabled />
                         </div>
                         <div class="col-1">
                             <label for="pass">Contraseña:</label>
@@ -81,16 +83,15 @@
                         </div>
                     </div>
                     <div class="botones">
-                        <a href="./index.html"><input type="submit" value="Guardar Cambios" class="guardar" /></a>
-                        <a href="./index.html"><input type="button" value="Cancelar Suscripción" class="cancelar" /></a>
+                        <a href="./main-page.html"><input type="submit" form="#form-perfil" value="Guardar Cambios" class="guardar" id="btn_submit"></a>
+                        <a href="./index.html"><button class="cancelar">Cancelar Suscripción</button></a>
                     </div>
                 </form>
+                <div id="mensaje" class="error">
+                </div>
             </article>
         </section>
     </main>
-    <footer>
-        <h4>&copy Todos los derechos reservados</h4>
-    </footer>
 </body>
 
 </html>

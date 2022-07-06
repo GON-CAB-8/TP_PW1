@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/detail.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="icon" type="image/x-icon" href="./icon/favicon-32x32.png">
+    <script src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/detail.js"></script>
     <title>CheFlix</title>
 </head>
 <body>
@@ -35,6 +40,7 @@
                     <div class="temporadas">
                         <label for="temporada">Temporadas:</label>
                         <select name="temporada" id="temporada">
+                            <option value="0">Seleccione Temporada</option>
                             <option value="1">Temporada 1</option>
                             <option value="2">Temporada 2</option>
                             <option value="3">Temporada 3</option>
@@ -45,15 +51,6 @@
                     <div class="capitulos">
                         <label for="capitulos">Capitulos:</label>
                         <select name="capitulo" id="capitulo">
-                            <option value="1">Capitulo 1</option>
-                            <option value="2">Capitulo 2</option>
-                            <option value="3">Capitulo 3</option>
-                            <option value="4">Capitulo 4</option>
-                            <option value="5">Capitulo 5</option>
-                            <option value="6">Capitulo 6</option>
-                            <option value="7">Capitulo 7</option>
-                            <option value="8">Capitulo 8</option>
-                            <option value="9">Capitulo 9</option>
                         </select>
                     </div>
                 </div>
@@ -71,13 +68,18 @@
                 <p>Cuatro socios constituyen un equipo que busca la solución a los problemas que les plantean sus clientes, y para ello, organizan un sofisticado simulacro y crean una realidad falsa encarnando cada uno de ellos una función clara y definida.</p>
             </div>
         </section>
+        <h3>Otras opciones para ver en familia</h3>
         <aside class="contenedor-similares">
-            <h3>Otras opciones para ver en familia</h3>
             <article class="similares">
-                <div class="similar"><a href="./detail-serie.html"><img src="./img/marginal.jpg" alt="Poster de"></a></div>
-                <div class="similar"><a href="./detail-serie.html"><img src="./img/mujeres.jpg" alt="Poster de"></a></div>
-                <div class="similar"><a href="./detail-serie.html"><img src="./img/rebelde.jpg" alt="Poster de"></a></div>
-                <div class="similar"><a href="./detail-serie.html"><img src="./img/tumberos.jpg" alt="Poster de"></a></div>
+                <div class="similar"><a href="./detail-serie.html"><img src="./img/mujeres.jpg" alt="portada de mujeres asesinas"></a></div>
+                <div class="similar"><a href="./detail-serie2.html"><img src="./img/rebelde.jpg" alt="portada de rebelde way"></a></div>
+                <div class="similar"><a href="./detail-serie.html"><img src="./img/tumberos.jpg" alt="portada de tumberos"></a></div>
+                <div class="similar"><a href="./detail-serie2.html"><img src="./img/el-puntero.jpg" alt="portada del puntero"></a></div>
+                <div class="similar"><a href="./detail-serie.html"><img src="./img/apache.jpg" alt="portada de apache"></a></div>
+                <div class="similar"><a href="./detail-serie2.html"><img src="./img/historia-de-un-clan.jpg" alt="portada de historia de un clan"></a></div>
+                <div class="similar"><a href="./detail-serie.html"><img src="./img/la-fragilidad-de-los-cuerpos.jpg" alt="portada de la fragilidad de los cuerpos"></a></div>
+                <div class="similar"><a href="./detail-serie2.html"><img src="./img/hermanos-y-detectives.jpg" alt="portada de hermanos y detectives"></a></div>
+                <div class="similar"><a href="./detail-serie.html"><img src="./img/marginal.jpg" alt="portada de el marginal"></a></div>
             </article>
         </aside>
     </main>

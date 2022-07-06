@@ -11,13 +11,12 @@ h1{
     flex-wrap: wrap;
     flex-direction: row;
     gap: 0.5em;
-    margin:0.5em;
-    height: 100%;
+    margin:0em 1.5em 1.5em 1.5em;
+    padding-top: 2em;
 }
 
 .series .serie{
     width: calc(20% - 0.5em);
-    margin: auto;
 }
 
 .serie img {
